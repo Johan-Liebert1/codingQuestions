@@ -18,4 +18,5 @@ def gcd_iterative(a, b):
 
     return b
 
+
 print(gcd_iterative(360, 71))

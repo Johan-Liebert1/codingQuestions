@@ -86,3 +86,36 @@ class BST:
 
                 elif parent_node.right == current_node:
                     parent_node.right = current_node.left if current_node.left else current_node.right
+
+                break
+        return self
+
+    def get_min_value(self):
+        current_node = self
+
+        while current_node.left:
+            current_node = current_node.left
+
+        return current_node.value
+
+    def traverse_bst_inorder(self, root_node, array=[]):
+        current_node = root_node
+
+        if current_node is not None:
+            current_node = current_node.left
+            self.traverse_bst_inorder(current_node, array)
+
+            current_node = current_node.right
+            self.traverse_bst_inorder(current_node, array)
+
+            array.append(current_node.value)
+
+        print(array)
+
+        return array
+
+
+newBst = BST(10)
+newBst.insert(5).insert(15).insert(2).insert(5).insert(22).insert(1)
+
+print(newBst.traverse_bst_inorder(newBst))
