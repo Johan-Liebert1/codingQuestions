@@ -1,10 +1,10 @@
 def fibonacci(n):
-    if n <= 2: return 1
+    if n <= 2:
+        return 1
 
     first = 1
-    count = 2
     second = 1
-    print(f'count = {count}')
+    count = 2
 
     while True:
         third = first + second
